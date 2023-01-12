@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>我的第一篇博客 | Yaru‘blog</title>
+  <title>tidy | Yaru‘blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="这篇主要记录下以后每次写发博客的步骤（编辑器使用的是Typora） 第一步：新建文章1）进入terminal，在yaru&#x2F;web_study&#x2F;blogwebseite目录下输入： 1hexo new &quot;文章题目&quot;  2）在yaru&#x2F;web_study&#x2F;blogwebseite&#x2F;source&#x2F;_posts目录下可以看到刚">
+  <meta name="description" content="Tidy dateThere are three interrelated rules which make a dataset tidy:  Each variable must have its own column. Each observation must have its own row. Each value must have its own cell.  These three">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://example.com/2022/12/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="tidy">
+<meta property="og:url" content="http://example.com/2023/01/12/tidy/index.html">
 <meta property="og:site_name" content="Yaru‘blog">
-<meta property="og:description" content="这篇主要记录下以后每次写发博客的步骤（编辑器使用的是Typora） 第一步：新建文章1）进入terminal，在yaru&#x2F;web_study&#x2F;blogwebseite目录下输入： 1hexo new &quot;文章题目&quot;  2）在yaru&#x2F;web_study&#x2F;blogwebseite&#x2F;source&#x2F;_posts目录下可以看到刚">
+<meta property="og:description" content="Tidy dateThere are three interrelated rules which make a dataset tidy:  Each variable must have its own column. Each observation must have its own row. Each value must have its own cell.  These three">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-04T11:37:16.000Z">
-<meta property="article:modified_time" content="2022-12-17T17:55:06.189Z">
+<meta property="article:published_time" content="2023-01-12T14:51:26.000Z">
+<meta property="article:modified_time" content="2023-01-12T14:58:23.761Z">
 <meta property="article:author" content="Yaru">
-<meta property="article:tag" content="hexo使用">
+<meta property="article:tag" content="StatSoft_R">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yaru‘blog" type="application/atom+xml">
@@ -114,14 +114,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-tidy" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客
+      tidy
     </h1>
   
 
@@ -133,8 +133,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/12/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-        <time datetime="2022-12-04T11:37:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-04</time>
+<a href="/2023/01/12/tidy/" class="archive-article-date">
+        <time datetime="2023-01-12T14:51:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-12</time>
 </a>
 
   
@@ -147,7 +147,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">378字</span>
+      <span class="post-count">1k字</span>
     </span>
   </span>
 
@@ -156,7 +156,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -167,32 +167,75 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>这篇主要记录下以后每次写发博客的步骤（编辑器使用的是Typora）</p>
-<h3 id="第一步：新建文章"><a href="#第一步：新建文章" class="headerlink" title="第一步：新建文章"></a>第一步：新建文章</h3><p>1）进入terminal，在yaru&#x2F;web_study&#x2F;blogwebseite目录下输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;文章题目&quot;</span><br></pre></td></tr></table></figure>
+    <h3 id="Tidy-date"><a href="#Tidy-date" class="headerlink" title="Tidy date"></a>Tidy date</h3><p>There are three interrelated rules which make a dataset tidy:</p>
+<ol>
+<li>Each variable must have its own column.</li>
+<li>Each observation must have its own row.</li>
+<li>Each value must have its own cell.</li>
+</ol>
+<p>These three rules are <strong>interrelated</strong> because it’s impossible to only satisfy two of the three. That interrelationship leads to an even simpler set of practical instructions:</p>
+<ol>
+<li>Put each dataset in a tibble.</li>
+<li>Put each variable in a column.</li>
+</ol>
+<h3 id="1-tidying-x2F-pivoting"><a href="#1-tidying-x2F-pivoting" class="headerlink" title="1. tidying&#x2F;pivoting"></a>1. tidying&#x2F;pivoting</h3><h4 id="step1"><a href="#step1" class="headerlink" title="step1:"></a>step1:</h4><p>figure out what the variables and observations are. </p>
+<h4 id="step2"><a href="#step2" class="headerlink" title="step2:"></a>step2:</h4><p>to resolve one of two common problems:</p>
+<ol>
+<li>One variable might be spread across multiple columns.</li>
+<li>One observation might be scattered across multiple rows.</li>
+</ol>
+<p>Typically a dataset will only suffer from one of these problems; it’ll only suffer from both if you’re really unlucky! To fix these problems, you’ll need the two most important functions in tidyr: <code>pivot_longer()</code> and <code>pivot_wider()</code>.</p>
+<h4 id="pivot-longer"><a href="#pivot-longer" class="headerlink" title="pivot_longer()"></a><code>pivot_longer()</code></h4><h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><p>A common problem is a dataset where some of the column names are not names of variables, but <em>values</em> of a variable.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">table4a</span><br><span class="line"><span class="comment">#&gt; # A tibble: 3 × 3</span></span><br><span class="line"><span class="comment">#&gt;   country     `1999` `2000`</span></span><br><span class="line"><span class="comment">#&gt; * &lt;chr&gt;        &lt;int&gt;  &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1 Afghanistan    745   2666</span></span><br><span class="line"><span class="comment">#&gt; 2 Brazil       37737  80488</span></span><br><span class="line"><span class="comment">#&gt; 3 China       212258 213766</span></span><br></pre></td></tr></table></figure>
 
-<p>2）在yaru&#x2F;web_study&#x2F;blogwebseite&#x2F;source&#x2F;_posts目录下可以看到刚刚新建的文件了（文章题目.md）</p>
-<p>3）在文件中编辑文章即可</p>
-<h3 id="第二步：给文章添加分类和标签"><a href="#第二步：给文章添加分类和标签" class="headerlink" title="第二步：给文章添加分类和标签"></a>第二步：给文章添加分类和标签</h3><p>1）在 <code>文章题目.md </code>文件中设置tags 和categories属性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: 文章题目</span><br><span class="line">date: 2018-08-02 11:41:10</span><br><span class="line">tags:</span><br><span class="line">- 博客           //多个标签可以这样添加</span><br><span class="line">- hexo</span><br><span class="line">categories: web前端</span><br></pre></td></tr></table></figure>
+<p>这里的问题是：1999和2000代表的是年份的值，但是它们所对应的列中的数据却是cases的数值；同时每一行是两个observations，而不是一个。</p>
+<h4 id="gt-Solution-将列名改为变量的名称"><a href="#gt-Solution-将列名改为变量的名称" class="headerlink" title="-&gt; Solution: 将列名改为变量的名称"></a>-&gt; Solution: 将列名改为变量的名称</h4><p>[need to pivot the offending columns into a new pair of variables, to describe that operation we need three parameters:</p>
+<ul>
+<li>The set of columns whose names are values, not variables. In this example, those are the columns <code>1999</code> and <code>2000</code>.</li>
+<li>The name of the variable to move the column names to. Here it is <code>year</code>.</li>
+<li>The name of the variable to move the column values to. Here it’s <code>cases</code>.f]</li>
+</ul>
+<p>即：一列是year, 对应每个国家的1999和2000变量；第二列是对应国家和年份的case</p>
+<p>通过<code>pivot_longer()</code>实现：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table4a <span class="operator">%&gt;%</span> </span><br><span class="line">  pivot_longer<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span>`<span class="number">1999</span>`, `2000`), names_to = &quot;year&quot;, values_to = &quot;cases&quot;)</span><br><span class="line">#&gt; # A tibble: 6 × 3</span><br><span class="line">#&gt;   country     year   cases</span><br><span class="line">#&gt;   &lt;chr&gt;       &lt;chr&gt;  &lt;int&gt;</span><br><span class="line">#&gt; 1 Afghanistan 1999     745</span><br><span class="line">#&gt; 2 Afghanistan 2000    2666</span><br><span class="line">#&gt; 3 Brazil      1999   37737</span><br><span class="line">#&gt; 4 Brazil      2000   80488</span><br><span class="line">#&gt; 5 China       1999  212258</span><br><span class="line">#&gt; 6 China       2000  213766</span><br></pre></td></tr></table></figure>
 
-<h4 id="tag-和-categories使用"><a href="#tag-和-categories使用" class="headerlink" title="[tag 和 categories使用]"></a>[tag 和 categories使用]</h4><h6 id="tag用法：（标签没有顺序和层次）"><a href="#tag用法：（标签没有顺序和层次）" class="headerlink" title="tag用法：（标签没有顺序和层次）"></a>tag用法：（标签没有顺序和层次）</h6><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: [123, 456] 						#支持多标签写法，直接写在一行用逗号隔开即可</span><br></pre></td></tr></table></figure>
+<p>注：“1999” and “2000” are non-syntactic names (because they don’t start with a letter) so we have to surround them in backticks.</p>
+<p>可使用<code>dplyr::left_join()</code> 进行数据库中的join操作。例如：<code>left_join(tidydata1, tidydata2)</code></p>
+<h4 id="pivot-wider"><a href="#pivot-wider" class="headerlink" title="pivot_wider()"></a><code>pivot_wider()</code></h4><p>You use it when an observation is scattered across multiple rows.</p>
+<h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table2</span><br><span class="line"><span class="comment">#&gt; # A tibble: 12 × 4</span></span><br><span class="line"><span class="comment">#&gt;   country      year type           count</span></span><br><span class="line"><span class="comment">#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;          &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1 Afghanistan  1999 cases            745</span></span><br><span class="line"><span class="comment">#&gt; 2 Afghanistan  1999 population  19987071</span></span><br><span class="line"><span class="comment">#&gt; 3 Afghanistan  2000 cases           2666</span></span><br><span class="line"><span class="comment">#&gt; 4 Afghanistan  2000 population  20595360</span></span><br><span class="line"><span class="comment">#&gt; 5 Brazil       1999 cases          37737</span></span><br><span class="line"><span class="comment">#&gt; 6 Brazil       1999 population 172006362</span></span><br><span class="line"><span class="comment">#&gt; # … with 6 more rows</span></span><br></pre></td></tr></table></figure>
 
-<h6 id="categories-用法：（而分类具有顺序性和层次性！！！hexo不支持多个同级分类）"><a href="#categories-用法：（而分类具有顺序性和层次性！！！hexo不支持多个同级分类）" class="headerlink" title="categories 用法：（而分类具有顺序性和层次性！！！hexo不支持多个同级分类）"></a>categories 用法：（而分类具有顺序性和层次性！！！hexo不支持多个同级分类）</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">categories: 123 						#这是默认写法，给文章添加一个分类。</span><br></pre></td></tr></table></figure>
+<p>For example, take <code>table2</code>: an observation is a country in a year, but each observation is spread across two rows.</p>
+<p>We only need two parameters here: </p>
+<ul>
+<li>The column to take variable names from. Here, it’s <code>type</code>.</li>
+<li>The column to take values from. Here it’s <code>count</code>.</li>
+</ul>
+<p>Once we’ve figured that out, we can use <code>pivot_wider()</code></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table2 <span class="operator">%&gt;%</span></span><br><span class="line">    pivot_wider<span class="punctuation">(</span>names_from <span class="operator">=</span> type<span class="punctuation">,</span> values_from <span class="operator">=</span> count<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#&gt; # A tibble: 6 × 4</span></span><br><span class="line"><span class="comment">#&gt;   country      year  cases population</span></span><br><span class="line"><span class="comment">#&gt;   &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;      &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1 Afghanistan  1999    745   19987071</span></span><br><span class="line"><span class="comment">#&gt; 2 Afghanistan  2000   2666   20595360</span></span><br><span class="line"><span class="comment">#&gt; 3 Brazil       1999  37737  172006362</span></span><br><span class="line"><span class="comment">#&gt; 4 Brazil       2000  80488  174504898</span></span><br><span class="line"><span class="comment">#&gt; 5 China        1999 212258 1272915272</span></span><br><span class="line"><span class="comment">#&gt; 6 China        2000 213766 1280428583</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">categories: [123, 456]			#456是123的子分类目录，而不是并列分类。</span><br></pre></td></tr></table></figure>
+<p>即：一行一个observation</p>
+<h3 id="2-separate-和unite"><a href="#2-separate-和unite" class="headerlink" title="2. separate()和unite()"></a>2. separate()和unite()</h3><p>seperate() -&gt; 处理： 一列a中混有例如两种数据，pulls apart one column into multiple columns, by splitting wherever a separator character appears.</p>
+<p>即将混有两种不同variables的那一列分按每种variable分成单独的两列。</p>
+<p>用法：</p>
+ <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table3 <span class="operator">%&gt;%</span></span><br><span class="line">	separate<span class="punctuation">(</span>a<span class="punctuation">,</span> into <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;第一列&quot;</span><span class="punctuation">,</span> <span class="string">&quot;第二列&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">   - [Diary, PlayStation]</span><br><span class="line">   - [Diary, Games]</span><br><span class="line">   - [Life]					</span><br><span class="line">   #为文章添加多个分类：此时这篇文章同时包括三个分类：PlayStation 和Games分别都是父分类Diary的子分类,</span><br><span class="line">   #同时Life是一个没有子分类的分类。</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="第三步：-启动服务器，本地测试"><a href="#第三步：-启动服务器，本地测试" class="headerlink" title="第三步： 启动服务器，本地测试"></a>第三步： 启动服务器，本地测试</h3><figure class="highlight plaintext"><figcaption><span>s</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>在<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 可以看到效果</p>
-<h3 id="第四步：-发布到GitHub上"><a href="#第四步：-发布到GitHub上" class="headerlink" title="第四步： 发布到GitHub上"></a>第四步： 发布到GitHub上</h3><p>本地预览测试无误后，执行一下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>在浏览器访问<a target="_blank" rel="noopener" href="https://jaaaru.github.io/%EF%BC%8C">https://jaaaru.github.io/，</a> 大功告成。</p>
+<p>也可以将一列中的内容用正则分开（参数sep &#x3D; “something”)</p>
+<p>unite() -&gt; 处理： if a single variable is spread across multiple columns.</p>
+<p>和seperate相反，将多列并为一列。 即可以用来rejoin 不同的列。</p>
+<p>默认不同的列中的数据被underscore (<code>_</code>)在新列中分开，这里也可以使用正则。</p>
+<p>如果我们想要不同数据间没有任何separateor， 加上<code>sep = &quot;&quot;</code>即可。</p>
+<h3 id="3-missing-values"><a href="#3-missing-values" class="headerlink" title="3. missing values"></a>3. missing values</h3><p>a value can be missing in one of two possible ways:</p>
+<ul>
+<li><strong>Explicitly</strong>, i.e. flagged with <code>NA</code>.</li>
+<li><strong>Implicitly</strong>, i.e. simply not present in the data.</li>
+</ul>
+<p>区别： An explicit missing value is the presence of an absence; an implicit missing value is the absence of a presence.</p>
+<p>solution: </p>
+<p>1.make implicit values explicit,比如某季度缺失了，可以用pivot_wider()将其缺失的季度显式地表示为NA. </p>
+<p>2.Another important tool for making missing values explicit in tidy data is <code>complete()</code></p>
+<p>3.当数据缺失是因为跟前文一样而省略导致的，可以直接用fill()补全。</p>
+<p>4.these explicit missing values may not be important in other representations of the data, you can set <code>values_drop_na = TRUE</code> in <code>pivot_longer()</code> to turn explicit missing values implicit.</p>
+<p>source: <a target="_blank" rel="noopener" href="https://r4ds.had.co.nz/tidy-data.html">https://r4ds.had.co.nz/tidy-data.html</a></p>
 
     
 
@@ -234,7 +277,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/12/04/我的第一篇博客/" title="我的第一篇博客" target="_blank">http://example.com/2022/12/04/我的第一篇博客/</a>
+          <a href="http://example.com/2023/01/12/tidy/" title="tidy" target="_blank">http://example.com/2023/01/12/tidy/</a>
         </li>
         
         <li>
@@ -256,7 +299,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">StatSoft_R</a>
         		</li>
       		
 		</ul>
@@ -268,7 +311,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -323,7 +366,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/12/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/01/12/tidy/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -338,15 +381,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/12/04/html%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          html基础
-        
-      </div>
-    </a>
   
+    <a href="/2023/01/04/css%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -371,7 +410,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">第一步：新建文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E7%BB%99%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE"><span class="toc-number">2.</span> <span class="toc-text">第二步：给文章添加分类和标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tag-%E5%92%8C-categories%E4%BD%BF%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">[tag 和 categories使用]</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tag%E7%94%A8%E6%B3%95%EF%BC%9A%EF%BC%88%E6%A0%87%E7%AD%BE%E6%B2%A1%E6%9C%89%E9%A1%BA%E5%BA%8F%E5%92%8C%E5%B1%82%E6%AC%A1%EF%BC%89"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">tag用法：（标签没有顺序和层次）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#categories-%E7%94%A8%E6%B3%95%EF%BC%9A%EF%BC%88%E8%80%8C%E5%88%86%E7%B1%BB%E5%85%B7%E6%9C%89%E9%A1%BA%E5%BA%8F%E6%80%A7%E5%92%8C%E5%B1%82%E6%AC%A1%E6%80%A7%EF%BC%81%EF%BC%81%EF%BC%81hexo%E4%B8%8D%E6%94%AF%E6%8C%81%E5%A4%9A%E4%B8%AA%E5%90%8C%E7%BA%A7%E5%88%86%E7%B1%BB%EF%BC%89"><span class="toc-number">2.1.0.2.</span> <span class="toc-text">categories 用法：（而分类具有顺序性和层次性！！！hexo不支持多个同级分类）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text">第三步： 启动服务器，本地测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A-%E5%8F%91%E5%B8%83%E5%88%B0GitHub%E4%B8%8A"><span class="toc-number">4.</span> <span class="toc-text">第四步： 发布到GitHub上</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tidy-date"><span class="toc-number">1.</span> <span class="toc-text">Tidy date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-tidying-x2F-pivoting"><span class="toc-number">2.</span> <span class="toc-text">1. tidying&#x2F;pivoting</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#step1"><span class="toc-number">2.1.</span> <span class="toc-text">step1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step2"><span class="toc-number">2.2.</span> <span class="toc-text">step2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pivot-longer"><span class="toc-number">2.3.</span> <span class="toc-text">pivot_longer()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A"><span class="toc-number">2.4.</span> <span class="toc-text">例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gt-Solution-%E5%B0%86%E5%88%97%E5%90%8D%E6%94%B9%E4%B8%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%90%8D%E7%A7%B0"><span class="toc-number">2.5.</span> <span class="toc-text">-&gt; Solution: 将列名改为变量的名称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pivot-wider"><span class="toc-number">2.6.</span> <span class="toc-text">pivot_wider()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B"><span class="toc-number">2.7.</span> <span class="toc-text">例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-separate-%E5%92%8Cunite"><span class="toc-number">3.</span> <span class="toc-text">2. separate()和unite()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-missing-values"><span class="toc-number">4.</span> <span class="toc-text">3. missing values</span></a></li></ol>
                     </div>
                 </span>
             </div>

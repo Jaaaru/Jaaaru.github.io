@@ -117,6 +117,171 @@
             
 
   
+    <article id="post-tidy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/01/12/tidy/" target="_blank">tidy</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/01/12/tidy/" class="archive-article-date">
+        <time datetime="2023-01-12T14:51:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="Tidy-date"><a href="#Tidy-date" class="headerlink" title="Tidy date"></a>Tidy date</h3><p>There are three interrelated rules which make a dataset tidy:</p>
+<ol>
+<li>Each variable must have its own column.</li>
+<li>Each observation must have its own row.</li>
+<li>Each value must have its own cell.</li>
+</ol>
+<p>These three rules are <strong>interrelated</strong> because it’s impossible to only satisfy two of the three. That interrelationship leads to an even simpler set of practical instructions:</p>
+<ol>
+<li>Put each dataset in a tibble.</li>
+<li>Put each variable in a column.</li>
+</ol>
+<h3 id="1-tidying-x2F-pivoting"><a href="#1-tidying-x2F-pivoting" class="headerlink" title="1. tidying&#x2F;pivoting"></a>1. tidying&#x2F;pivoting</h3><h4 id="step1"><a href="#step1" class="headerlink" title="step1:"></a>step1:</h4><p>figure out what the variables and observations are. </p>
+<h4 id="step2"><a href="#step2" class="headerlink" title="step2:"></a>step2:</h4><p>to resolve one of two common problems:</p>
+<ol>
+<li>One variable might be spread across multiple columns.</li>
+<li>One observation might be scattered across multiple rows.</li>
+</ol>
+<p>Typically a dataset will only suffer from one of these problems; it’ll only suffer from both if you’re really unlucky! To fix these problems, you’ll need the two most important functions in tidyr: <code>pivot_longer()</code> and <code>pivot_wider()</code>.</p>
+<h4 id="pivot-longer"><a href="#pivot-longer" class="headerlink" title="pivot_longer()"></a><code>pivot_longer()</code></h4><h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><p>A common problem is a dataset where some of the column names are not names of variables, but <em>values</em> of a variable.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">table4a</span><br><span class="line"><span class="comment">#&gt; # A tibble: 3 × 3</span></span><br><span class="line"><span class="comment">#&gt;   country     `1999` `2000`</span></span><br><span class="line"><span class="comment">#&gt; * &lt;chr&gt;        &lt;int&gt;  &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1 Afghanistan    745   2666</span></span><br><span class="line"><span class="comment">#&gt; 2 Brazil       37737  80488</span></span><br><span class="line"><span class="comment">#&gt; 3 China       212258 213766</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的问题是：1999和2000代表的是年份的值，但是它们所对应的列中的数据却是cases的数值；同时每一行是两个observations，而不是一个。</p>
+<h4 id="gt-Solution-将列名改为变量的名称"><a href="#gt-Solution-将列名改为变量的名称" class="headerlink" title="-&gt; Solution: 将列名改为变量的名称"></a>-&gt; Solution: 将列名改为变量的名称</h4><p>[need to pivot the offending columns into a new pair of variables, to describe that operation we need three parameters:</p>
+<ul>
+<li>The set of columns whose names are values, not variables. In this example, those are the columns <code>1999</code> and <code>2000</code>.</li>
+<li>The name of the variable to move the column names to. Here it is <code>year</code>.</li>
+<li>The name of the variable to move the column values to. Here it’s <code>cases</code>.f]</li>
+</ul>
+<p>即：一列是year, 对应每个国家的1999和2000变量；第二列是对应国家和年份的case</p>
+<p>通过<code>pivot_longer()</code>实现：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table4a <span class="operator">%&gt;%</span> </span><br><span class="line">  pivot_longer<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span>`<span class="number">1999</span>`, `2000`), names_to = &quot;year&quot;, values_to = &quot;cases&quot;)</span><br><span class="line">#&gt; # A tibble: 6 × 3</span><br><span class="line">#&gt;   country     year   cases</span><br><span class="line">#&gt;   &lt;chr&gt;       &lt;chr&gt;  &lt;int&gt;</span><br><span class="line">#&gt; 1 Afghanistan 1999     745</span><br><span class="line">#&gt; 2 Afghanistan 2000    2666</span><br><span class="line">#&gt; 3 Brazil      1999   37737</span><br><span class="line">#&gt; 4 Brazil      2000   80488</span><br><span class="line">#&gt; 5 China       1999  212258</span><br><span class="line">#&gt; 6 China       2000  213766</span><br></pre></td></tr></table></figure>
+
+<p>注：“1999” and “2000” are non-syntactic names (because they don’t start with a letter) so we have to surround them in backticks.</p>
+<p>可使用<code>dplyr::left_join()</code> 进行数据库中的join操作。例如：<code>left_join(tidydata1, tidydata2)</code></p>
+<h4 id="pivot-wider"><a href="#pivot-wider" class="headerlink" title="pivot_wider()"></a><code>pivot_wider()</code></h4><p>You use it when an observation is scattered across multiple rows.</p>
+<h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table2</span><br><span class="line"><span class="comment">#&gt; # A tibble: 12 × 4</span></span><br><span class="line"><span class="comment">#&gt;   country      year type           count</span></span><br><span class="line"><span class="comment">#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;          &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1 Afghanistan  1999 cases            745</span></span><br><span class="line"><span class="comment">#&gt; 2 Afghanistan  1999 population  19987071</span></span><br><span class="line"><span class="comment">#&gt; 3 Afghanistan  2000 cases           2666</span></span><br><span class="line"><span class="comment">#&gt; 4 Afghanistan  2000 population  20595360</span></span><br><span class="line"><span class="comment">#&gt; 5 Brazil       1999 cases          37737</span></span><br><span class="line"><span class="comment">#&gt; 6 Brazil       1999 population 172006362</span></span><br><span class="line"><span class="comment">#&gt; # … with 6 more rows</span></span><br></pre></td></tr></table></figure>
+
+<p>For example, take <code>table2</code>: an observation is a country in a year, but each observation is spread across two rows.</p>
+<p>We only need two parameters here: </p>
+<ul>
+<li>The column to take variable names from. Here, it’s <code>type</code>.</li>
+<li>The column to take values from. Here it’s <code>count</code>.</li>
+</ul>
+<p>Once we’ve figured that out, we can use <code>pivot_wider()</code></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table2 <span class="operator">%&gt;%</span></span><br><span class="line">    pivot_wider<span class="punctuation">(</span>names_from <span class="operator">=</span> type<span class="punctuation">,</span> values_from <span class="operator">=</span> count<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#&gt; # A tibble: 6 × 4</span></span><br><span class="line"><span class="comment">#&gt;   country      year  cases population</span></span><br><span class="line"><span class="comment">#&gt;   &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;      &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1 Afghanistan  1999    745   19987071</span></span><br><span class="line"><span class="comment">#&gt; 2 Afghanistan  2000   2666   20595360</span></span><br><span class="line"><span class="comment">#&gt; 3 Brazil       1999  37737  172006362</span></span><br><span class="line"><span class="comment">#&gt; 4 Brazil       2000  80488  174504898</span></span><br><span class="line"><span class="comment">#&gt; 5 China        1999 212258 1272915272</span></span><br><span class="line"><span class="comment">#&gt; 6 China        2000 213766 1280428583</span></span><br></pre></td></tr></table></figure>
+
+<p>即：一行一个observation</p>
+<h3 id="2-separate-和unite"><a href="#2-separate-和unite" class="headerlink" title="2. separate()和unite()"></a>2. separate()和unite()</h3><p>seperate() -&gt; 处理： 一列a中混有例如两种数据，pulls apart one column into multiple columns, by splitting wherever a separator character appears.</p>
+<p>即将混有两种不同variables的那一列分按每种variable分成单独的两列。</p>
+<p>用法：</p>
+ <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table3 <span class="operator">%&gt;%</span></span><br><span class="line">	separate<span class="punctuation">(</span>a<span class="punctuation">,</span> into <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;第一列&quot;</span><span class="punctuation">,</span> <span class="string">&quot;第二列&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以将一列中的内容用正则分开（参数sep &#x3D; “something”)</p>
+<p>unite() -&gt; 处理： if a single variable is spread across multiple columns.</p>
+<p>和seperate相反，将多列并为一列。 即可以用来rejoin 不同的列。</p>
+<p>默认不同的列中的数据被underscore (<code>_</code>)在新列中分开，这里也可以使用正则。</p>
+<p>如果我们想要不同数据间没有任何separateor， 加上<code>sep = &quot;&quot;</code>即可。</p>
+<h3 id="3-missing-values"><a href="#3-missing-values" class="headerlink" title="3. missing values"></a>3. missing values</h3><p>a value can be missing in one of two possible ways:</p>
+<ul>
+<li><strong>Explicitly</strong>, i.e. flagged with <code>NA</code>.</li>
+<li><strong>Implicitly</strong>, i.e. simply not present in the data.</li>
+</ul>
+<p>区别： An explicit missing value is the presence of an absence; an implicit missing value is the absence of a presence.</p>
+<p>solution: </p>
+<p>1.make implicit values explicit,比如某季度缺失了，可以用pivot_wider()将其缺失的季度显式地表示为NA. </p>
+<p>2.Another important tool for making missing values explicit in tidy data is <code>complete()</code></p>
+<p>3.当数据缺失是因为跟前文一样而省略导致的，可以直接用fill()补全。</p>
+<p>4.these explicit missing values may not be important in other representations of the data, you can set <code>values_drop_na = TRUE</code> in <code>pivot_longer()</code> to turn explicit missing values implicit.</p>
+<p>source: <a target="_blank" rel="noopener" href="https://r4ds.had.co.nz/tidy-data.html">https://r4ds.had.co.nz/tidy-data.html</a></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">StatSoft_R</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/01/12/tidy/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-css基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -817,11 +982,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">css基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">html基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">html基础</a>
+                <a href="javascript:void(0)" class="js-tag color1">css基础</a>
               </li>
              
               <li class="article-tag-list-item">
