@@ -152,6 +152,15 @@
 <p><code>defer</code>可以解决这一问题；脚本将按照在页面中出现的顺序加载和运行，这样可以保证脚本间的依赖可以正常工作。</p>
 <p><strong>kurzgesagt</strong>: 如果脚本无需等待页面解析，且无依赖独立运行，那么应使用 <code>async</code>。如果脚本需要等待页面解析，且依赖于其它脚本，调用这些脚本时应使用 <code>defer</code>，将关联的脚本按所需顺序置于 HTML 中。</p>
 </li>
+<li><p>使用var时注意变量提升（初始化一个变量之后用 <code>var</code> 声明它，它仍然可以工作。）函数和变量相比，会被优先提升。这意味着函数会被提升到更靠前的位置。JavaScript 只会提升声明，不会提升其初始化。kurzgesagt: 先声明，后调用。</p>
+<p>注： var 可以根据需要多次声明相同名称的变量，但是 <code>let</code> 不能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> myName = <span class="string">&#x27;Bob&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>let</code>直接在下一次使用该变量时对变量名进行修改&#x2F;赋值即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line">myName = <span class="string">&#x27;Bob&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结论：别用var，用let。</p>
+</li>
 </ol>
 <p>[source]<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps">https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps</a></p>
 
