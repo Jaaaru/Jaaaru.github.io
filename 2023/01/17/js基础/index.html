@@ -18,7 +18,7 @@
 <meta property="og:description" content="intro async &amp; defer async虽然可以告知浏览器在遇到&lt;script&gt;元素时不要中断后续html内容的加载。async脚本不会阻塞页面渲染，而是直接下载任何运行。但是问题是：js脚本的运行次序无法控制，只是脚本不会阻止剩余页面的显示。如果有多个js脚本且相互间存在依赖的时候，async就不适用了。所以：当页面的脚本之间彼此独立，且不依赖于本页面的其它任何脚本">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-17T19:42:32.000Z">
-<meta property="article:modified_time" content="2023-01-18T22:04:36.996Z">
+<meta property="article:modified_time" content="2023-02-07T22:20:46.781Z">
 <meta property="article:author" content="滴滴滴">
 <meta property="article:tag" content="js基础">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">440字</span>
+      <span class="post-count">433字</span>
     </span>
   </span>
 
@@ -176,10 +176,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> myName = <span class="string">&#x27;Bob&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
 <p><code>let</code>直接在下一次使用该变量时对变量名进行修改&#x2F;赋值即可。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line">myName = <span class="string">&#x27;Bob&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>结论：别用var，用let。</p>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myName = <span class="string">&#x27;Chris&#x27;</span>;</span><br><span class="line">myName = <span class="string">&#x27;Bob&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>[source]<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps">https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps</a></p>
 
@@ -405,10 +402,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">html基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">StatSoft_R</a>
               </li>
              
@@ -417,11 +410,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color2">html基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">js基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo使用</a>
               </li>
             
             <div class="clearfix"></div>
